@@ -27,19 +27,19 @@ const Footer = () => {
         <div className="flex flex-col gap-1 cursor-pointer font-mono border-gray-300">
           <h2 className='text-lg font-semibold mb-4 tracking-widest text-gray-700'>COMPANY</h2>
             <Link to='/'>
-              <li className='text-gray-800 hover:text-[#192de2] list-none'>Home</li>
+              <p className='text-gray-800 hover:text-[#192de2]'>Home</p>
             </Link>
-            <Link to='/collection'>
-              <p className='text-gray-800 hover:text-[#192de2] list-none'>Our Doctors</p>
+            <Link to='/doctors'>
+              <p className='text-gray-800 hover:text-[#192de2]'>Our Doctors</p>
             </Link>
-            <Link to='/cart'>
-              <p className='text-gray-800 hover:text-[#192de2] list-none'>Your Appointments</p>
+            <Link to='/appointment'>
+              <p className='text-gray-800 hover:text-[#192de2]'>Your Appointments</p>
             </Link>
             <Link to='/aboutus'>
-              <p className='text-gray-800 hover:text-[#192de2] list-none'>Who We Are</p>
+              <p className='text-gray-800 hover:text-[#192de2]'>Who We Are</p>
             </Link>
             <Link to='/contact'>
-              <p className="text-gray-800 hover:text-[#192de2] list-none">Contact Us</p>
+              <p className="text-gray-800 hover:text-[#192de2]">Contact Us</p>
             </Link>
         </div>
 
