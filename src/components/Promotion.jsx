@@ -11,7 +11,7 @@ const Promotion = () => {
       
       {/* Promotion Text Left */}
       <div className="flex-1 py-8 sm:py-10 md:py-16 lg:py-24 lg:pl-5">
-        <div className="font-mono lg:font-mono tracking-wider text-white">
+        <div className="font-thin lg:font-mono tracking-wider text-white">
             <p className="text-xs sm:text-4xl">Schedule a Appointment</p>
             <p className="sm:mt-4 text-xs sm:text-3xl">With 100+ Verified Medical Experts</p>
         </div>
