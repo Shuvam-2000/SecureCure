@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.active hr{
+    @apply block
+}
+.active li {
+    color: #192de2;
+}
+
+@media (max-width: 640px) {
+    a.active{
+        color: #0c1db9;
+    }
+    ::-webkit-scrollbar{
+        @apply hidden
+    }
+}
