@@ -3,7 +3,7 @@
 const DocInfo = () => {
   return (
     <div>
-      
+      docinfo
     </div>
   )
 }
