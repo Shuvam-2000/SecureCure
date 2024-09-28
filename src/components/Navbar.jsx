@@ -10,31 +10,31 @@ const Navbar = () => {
 
   return (
     <div className="flex items center justify-between text-sm py-4 border-b border-b-gray-300">
-      <h1 className='sm:text-3xl text-2xl font-bold text-[#192de2] cursor-pointer'>
+      <h1 className='sm:text-3xl text-2xl font-bold text-[#f9755b] cursor-pointer'>
       SecureCure</h1>
         <ul className="hidden md:flex justify-evenly mt-2 gap-5 font-medium">
             <NavLink to='/'>
                 <li className="py-1">HOME</li>
-                <hr className="border-none outline-none h-0.5 bg-[#192de2] w-3/5 m-auto hidden" />
+                <hr className="border-none outline-none h-0.5 bg-[#f9755b] w-3/5 m-auto hidden" />
             </NavLink>
             <NavLink to='/doctors'>
                 <li className="py-1">CARE GIVERS</li>
-                <hr className="border-none outline-none h-0.5 bg-[#192de2] w-3/5 m-auto hidden"/>
+                <hr className="border-none outline-none h-0.5 bg-[#f9755b] w-3/5 m-auto hidden"/>
             </NavLink>
             <NavLink to='/aboutus'>
                 <li className="py-1">KNOW US</li>
-                <hr className="border-none outline-none h-0.5 bg-[#192de2] w-3/5 m-auto hidden"/>
+                <hr className="border-none outline-none h-0.5 bg-[#f9755b] w-3/5 m-auto hidden"/>
             </NavLink>
             <NavLink to='/contact'>
                 <li className="py-1">CONTACT US</li>
-                <hr className="border-none outline-none h-0.5 bg-[#192de2] w-3/5 m-auto hidden"/>
+                <hr className="border-none outline-none h-0.5 bg-[#f9755b] w-3/5 m-auto hidden"/>
             </NavLink>
         </ul>
         <div className="flex items-center gap-4">
-            <button onClick={() => navigate('/login')} className="bg-[#192de2] hover:bg-[#4758f3] text-white px-8 py-3 rounded-full font-bold hidden md:block">
+            <button onClick={() => navigate('/login')} className="bg-[#f9755b] hover:scale-110 transition-all duration-500 text-white px-8 py-3 rounded-full font-bold hidden md:block">
                 Join Now
             </button>
-            <img src={assets.menu_icon} alt="menu-icon" className="sm:w-5 w-4 cursor-pointer sm:hidden text-[#192de2]" onClick={() => setMenuVisible(true)}/>
+            <img src={assets.menu_icon} alt="menu-icon" className="sm:w-5 w-4 cursor-pointer sm:hidden text-[#f9755b]" onClick={() => setMenuVisible(true)}/>
         </div>
         
          {/* Sidebar for mobile-view*/}
