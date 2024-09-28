@@ -6,12 +6,12 @@
     @apply block
 }
 .active li {
-    color: #192de2;
+    color: #f9755b;
 }
 
 @media (max-width: 640px) {
     a.active{
-        color: #0c1db9;
+        color: #f9755b;
     }
     ::-webkit-scrollbar{
         @apply hidden
