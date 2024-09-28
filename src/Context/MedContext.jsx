@@ -23,6 +23,7 @@ const MedContextProvider = ({ children }) => {
         setMenuVisible,
         priceCurrency,
         topDoctors,
+        doctors
     };
 
     return (
