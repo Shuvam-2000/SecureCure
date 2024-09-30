@@ -24,6 +24,7 @@ const DocInfo = () => {
   const showAllDoctors = () => {
     navigate('/doctors');  
     setShowDoctor(doctors); 
+    setShowFilters(false); // Hide filters after clicking
   };
 
   useEffect(() => {
@@ -38,7 +39,7 @@ const DocInfo = () => {
 
       {/* Button to toggle filters in mobile view */}
       <button 
-        className='block sm:hidden bg-[#f9755b] text-white px-4 py-2 rounded-md mt-6' 
+        className='block sm:hidden bg-[#f9755b] text-white px-4 py-2 rounded-md mt-4' 
         onClick={() => setShowFilters(!showFilters)}
       >
         {showFilters ? 'Hide Filters' : 'Show Filters'}
@@ -47,7 +48,7 @@ const DocInfo = () => {
       <div className='flex flex-col sm:flex-row justify-start gap-8 mt-8'>
 
         {/* Speciality Section - Hidden in mobile unless filters are shown */}
-        <div className={`flex flex-col gap-4 mb-6 text-sm text-gray-600 cursor-pointer ${showFilters ? 'block' : 'hidden'} sm:block`}>
+        <div className={`flex flex-col gap-4 text-sm text-gray-600 cursor-pointer ${showFilters ? 'block' : 'hidden'} sm:block`}>
           <h2 className='sm:text-lg text-sm font-semibold tracking-wide'>Speciality:</h2>
           
           <Link to='/doctors'>
@@ -62,11 +63,12 @@ const DocInfo = () => {
           </Link>
 
           <p 
-            onClick={() => 
+            onClick={() => {
               speciality === 'General Physician' 
                 ? navigate('/doctors') 
-                : navigate(`/doctors/${encodeURIComponent('General Physician')}`)
-            }
+                : navigate(`/doctors/${encodeURIComponent('General Physician')}`);
+              setShowFilters(false); // Hide filters after clicking
+            }}
             className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
               speciality === 'General Physician' ? "bg-[#f9755b] text-white" : ""
             }`}>
@@ -74,11 +76,12 @@ const DocInfo = () => {
           </p>
 
           <p 
-            onClick={() => 
+            onClick={() => {
               speciality === 'Gynecologist' 
                 ? navigate('/doctors') 
-                : navigate(`/doctors/${encodeURIComponent('Gynecologist')}`)
-            }
+                : navigate(`/doctors/${encodeURIComponent('Gynecologist')}`);
+              setShowFilters(false); // Hide filters after clicking
+            }}
             className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
               speciality === 'Gynecologist' ? "bg-[#f9755b] text-white" : ""
             }`}>
@@ -86,11 +89,12 @@ const DocInfo = () => {
           </p>
 
           <p 
-            onClick={() => 
+            onClick={() => {
               speciality === 'Dermatologist' 
                 ? navigate('/doctors') 
-                : navigate(`/doctors/${encodeURIComponent('Dermatologist')}`)
-            }
+                : navigate(`/doctors/${encodeURIComponent('Dermatologist')}`);
+              setShowFilters(false); // Hide filters after clicking
+            }}
             className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
               speciality === 'Dermatologist' ? "bg-[#f9755b] text-white" : ""
             }`}>
@@ -98,11 +102,12 @@ const DocInfo = () => {
           </p>
 
           <p 
-            onClick={() => 
+            onClick={() => {
               speciality === 'Pediatrician' 
                 ? navigate('/doctors') 
-                : navigate(`/doctors/${encodeURIComponent('Pediatrician')}`)
-            }
+                : navigate(`/doctors/${encodeURIComponent('Pediatrician')}`);
+              setShowFilters(false); // Hide filters after clicking
+            }}
             className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
               speciality === 'Pediatrician' ? "bg-[#f9755b] text-white" : ""
             }`}>
@@ -110,11 +115,12 @@ const DocInfo = () => {
           </p>
 
           <p 
-            onClick={() => 
+            onClick={() => {
               speciality === 'Neurologist' 
                 ? navigate('/doctors') 
-                : navigate(`/doctors/${encodeURIComponent('Neurologist')}`)
-            }
+                : navigate(`/doctors/${encodeURIComponent('Neurologist')}`);
+              setShowFilters(false); // Hide filters after clicking
+            }}
             className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
               speciality === 'Neurologist' ? "bg-[#f9755b] text-white" : ""
             }`}>
@@ -122,11 +128,12 @@ const DocInfo = () => {
           </p>
 
           <p 
-            onClick={() => 
+            onClick={() => {
               speciality === 'Gastroenterologist' 
                 ? navigate('/doctors') 
-                : navigate(`/doctors/${encodeURIComponent('Gastroenterologist')}`)
-            }
+                : navigate(`/doctors/${encodeURIComponent('Gastroenterologist')}`);
+              setShowFilters(false); // Hide filters after clicking
+            }}
             className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
               speciality === 'Gastroenterologist' ? "bg-[#f9755b] text-white" : ""
             }`}>
