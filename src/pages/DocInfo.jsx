@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import { NavLink, useNavigate, useParams } from 'react-router-dom';
 import { MedContext } from '../Context/MedContext';
 import { Link } from 'react-router-dom';
 import assets from '../assets/assets';
@@ -8,8 +8,8 @@ const DocInfo = () => {
   const { speciality } = useParams();
   const { doctors } = useContext(MedContext);
   const [showDoctor, setShowDoctor] = useState([]);
+  const [showFilters, setShowFilters] = useState(false); // State to control filter visibility on mobile
   const navigate = useNavigate();
-  // const [showFilter, setShowFilter] = useState(false)
 
   const applyFilters = () => {
     let filteredDoctors = doctors;
@@ -21,7 +21,6 @@ const DocInfo = () => {
     setShowDoctor(filteredDoctors);
   };
 
-  
   const showAllDoctors = () => {
     navigate('/doctors');  
     setShowDoctor(doctors); 
@@ -33,20 +32,106 @@ const DocInfo = () => {
 
   return (
     <div className='container mx-auto px-4'>
-      <p className='text-gray-600 text-left sm:text-xl text-sm font-mono mt-8 sm:tracking-wider'>
+      <p className='text-gray-600 text-left sm:text-xl text-sm font-bold sm:font-mono mt-8 sm:tracking-wider'>
         Choose Your Medical Advisor Here :-
       </p>
+
+      {/* Button to toggle filters in mobile view */}
+      <button 
+        className='block sm:hidden bg-[#f9755b] text-white px-4 py-2 rounded-md mt-6' 
+        onClick={() => setShowFilters(!showFilters)}
+      >
+        {showFilters ? 'Hide Filters' : 'Show Filters'}
+      </button>
+
       <div className='flex flex-col sm:flex-row justify-start gap-8 mt-8'>
-        {/* Speciality Section */}
-        <div className='flex flex-col gap-4 text-sm text-gray-600 cursor-pointer'>
+
+        {/* Speciality Section - Hidden in mobile unless filters are shown */}
+        <div className={`flex flex-col gap-4 mb-6 text-sm text-gray-600 cursor-pointer ${showFilters ? 'block' : 'hidden'} sm:block`}>
           <h2 className='sm:text-lg text-sm font-semibold tracking-wide'>Speciality:</h2>
-          <p onClick={showAllDoctors} className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer`}>All Doctors</p>
-          <p onClick={() => speciality === 'General%20physician' ? navigate('/doctors') : navigate('/doctors/General%20physician')} className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer`}>General Physician</p>
-          <p onClick={() => speciality === 'Gynecologist' ? navigate('/doctors') : navigate('/doctors/Gynecologist')} className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer`}>Gynecologist</p>
-          <p onClick={() => speciality === 'Dermatologist' ? navigate('/doctors') : navigate('/doctors/Dermatologist')} className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer`}>Dermatologist</p>
-          <p onClick={() => speciality === 'Pediatrician' ? navigate('/doctors') : navigate('/doctors/Pediatrician')} className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer`}>Pediatrician</p>
-          <p onClick={() => speciality === 'Neurologist' ? navigate('/doctors') : navigate('/doctors/Neurologist')} className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer`}>Neurologist</p>
-          <p onClick={() => speciality === 'Gastroenterologist' ? navigate('/doctors') : navigate('/doctors/Gastroenterologist')} className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer`}>Gastroenterologist</p>
+          
+          <Link to='/doctors'>
+            <p 
+              onClick={showAllDoctors} 
+              className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
+                location.pathname === '/doctors' ? "bg-[#f9755b] text-white" : ""
+              }`}
+            >
+              All Doctors
+            </p>
+          </Link>
+
+          <p 
+            onClick={() => 
+              speciality === 'General Physician' 
+                ? navigate('/doctors') 
+                : navigate(`/doctors/${encodeURIComponent('General Physician')}`)
+            }
+            className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
+              speciality === 'General Physician' ? "bg-[#f9755b] text-white" : ""
+            }`}>
+            General Physician
+          </p>
+
+          <p 
+            onClick={() => 
+              speciality === 'Gynecologist' 
+                ? navigate('/doctors') 
+                : navigate(`/doctors/${encodeURIComponent('Gynecologist')}`)
+            }
+            className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
+              speciality === 'Gynecologist' ? "bg-[#f9755b] text-white" : ""
+            }`}>
+            Gynecologist
+          </p>
+
+          <p 
+            onClick={() => 
+              speciality === 'Dermatologist' 
+                ? navigate('/doctors') 
+                : navigate(`/doctors/${encodeURIComponent('Dermatologist')}`)
+            }
+            className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
+              speciality === 'Dermatologist' ? "bg-[#f9755b] text-white" : ""
+            }`}>
+            Dermatologist
+          </p>
+
+          <p 
+            onClick={() => 
+              speciality === 'Pediatrician' 
+                ? navigate('/doctors') 
+                : navigate(`/doctors/${encodeURIComponent('Pediatrician')}`)
+            }
+            className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
+              speciality === 'Pediatrician' ? "bg-[#f9755b] text-white" : ""
+            }`}>
+            Pediatrician
+          </p>
+
+          <p 
+            onClick={() => 
+              speciality === 'Neurologist' 
+                ? navigate('/doctors') 
+                : navigate(`/doctors/${encodeURIComponent('Neurologist')}`)
+            }
+            className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
+              speciality === 'Neurologist' ? "bg-[#f9755b] text-white" : ""
+            }`}>
+            Neurologist
+          </p>
+
+          <p 
+            onClick={() => 
+              speciality === 'Gastroenterologist' 
+                ? navigate('/doctors') 
+                : navigate(`/doctors/${encodeURIComponent('Gastroenterologist')}`)
+            }
+            className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
+              speciality === 'Gastroenterologist' ? "bg-[#f9755b] text-white" : ""
+            }`}>
+            Gastroenterologist
+          </p>
         </div>
 
         {/* Doctors Listing */}
@@ -74,7 +159,7 @@ const DocInfo = () => {
                 alt="no-doctors-available" 
                 className='rounded-lg justify-center mx-auto w-full max-w-[500px]' 
               />
-              <p className='text-center mt-2 font-medium'>No Doctor Avaliable Now !!</p>
+              <p className='text-center mt-2 font-medium'>No Doctor Available Now !!</p>
             </div>
           )}
         </div>
