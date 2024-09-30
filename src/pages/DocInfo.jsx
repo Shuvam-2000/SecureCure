@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
-import { NavLink, useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import { MedContext } from '../Context/MedContext';
-import { Link } from 'react-router-dom';
 import assets from '../assets/assets';
 
 const DocInfo = () => {
