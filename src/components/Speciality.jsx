@@ -9,9 +9,14 @@ const Speciality = () => {
       <div className='flex sm:justify-center sm:gap-8 gap-4 pt-5 w-full sm:overflow-hidden overflow-scroll'>
         {
             specialityData.map((doctorInfo) => (
-                <Link onClick={() => scrollTo(0,0)} className='flex flex-col items-center sm:text-sm text-xs cursor-pointer flex-shrink-0 hover:translate-y-[-10px] transition-all duration-500' key={doctorInfo.speciality} to={`/doctors/${doctorInfo.speciality}`}>
-                    <img className='w-16 sm:w-24 mb-2' src={doctorInfo.image} alt='speciality-image'/>
-                    <p className='font-semibold'>{doctorInfo.speciality}</p>
+                <Link 
+                  onClick={() => scrollTo(0,0)} 
+                  className='flex flex-col items-center sm:text-sm text-xs cursor-pointer flex-shrink-0 hover:translate-y-[-10px] transition-all duration-500' 
+                  key={doctorInfo.speciality} to={`/doctors/${doctorInfo.speciality}`}>
+                  <img className='w-16 sm:w-24 mb-2' 
+                  src={doctorInfo.image} 
+                  alt='speciality-image'/>
+                  <p className='font-semibold'>{doctorInfo.speciality}</p>
                 </Link>
             ))
         }
