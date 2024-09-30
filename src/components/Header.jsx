@@ -16,8 +16,10 @@ const Header = () => {
           <p className="text-white sm:text-xl text-xs font-semibold sm:font-mono tracking-wider">
             Providing Expert Care When You Need It Most. <br className="hidden sm:block" /> Your Health is Our Priority
           </p>
-          <button onClick={() => navigate('/doctors')} className="sm:mt-4 mt-2 mb-4 inline-flex items-center bg-white text-[#f9755b] font-semibold sm:py-2 sm:px-4 
-          py-2 px-3 sm:text-sm text-xs rounded-lg hover:scale-110 transition ease-in duration-300 gap-2">
+          <button 
+            onClick={() => navigate('/doctors')} 
+            className="sm:mt-4 mt-2 mb-4 inline-flex items-center bg-white text-[#f9755b] font-semibold sm:py-2 sm:px-4 
+            py-2 px-3 sm:text-sm text-xs rounded-lg hover:scale-110 transition ease-in duration-300 gap-2">
             Book Your Appointment <img src={assets.arrow_icon} alt="arrow icon" className="ml-2" />
           </button>
       </div>
