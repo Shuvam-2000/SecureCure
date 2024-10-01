@@ -125,7 +125,7 @@ export const doctors = [
         speciality: 'Dermatologist',
         degree: 'MBBS',
         experience: '1 Year',
-        about: 'Dr. Sneha Patil is a skilled dermatologist, specializing in skin care treatments and cosmetic procedures.',
+        about: 'Dr. Rahul Patil is a skilled dermatologist, specializing in skin care treatments and cosmetic procedures.',
         fees: 350,
         address: {
             line1: '37th Cross, Koramangala',
@@ -181,7 +181,7 @@ export const doctors = [
         speciality: 'General physician',
         degree: 'MBBS',
         experience: '4 Years',
-        about: 'Dr. Kavita Reddy is known for providing holistic medical care with a focus on overall well-being and preventive care.',
+        about: 'Dr. Kabir Reddy is known for providing holistic medical care with a focus on overall well-being and preventive care.',
         fees: 400,
         address: {
             line1: '19th Cross, Malleswaram',
