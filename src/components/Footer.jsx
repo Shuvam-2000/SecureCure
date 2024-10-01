@@ -47,7 +47,7 @@ const Footer = () => {
           <h2 className='text-lg font-semibold mb-4 tracking-widest text-[#f9755b]'>CONNECT WITH US</h2>
           <p className='mb-2'>123 Tech Avenue</p>
           <p className='mb-2'>Innovate City, IC 54321</p>
-          <p className='mb-2 cursor-pointer'>Email: <span className="hover:text-[#f9755b]">support@shopsphere.com</span></p>
+          <p className='mb-2 cursor-pointer'>Email: <span className="hover:text-[#f9755b]">admin@securecure.com</span></p>
           <p className="cursor-pointer">Phone: <span className="hover:text-[#f9755b]">(+91) 4567890672</span></p>
         </div>
       </div>
