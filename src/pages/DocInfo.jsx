@@ -38,7 +38,7 @@ const DocInfo = () => {
 
       {/* Button to toggle filters in mobile view */}
       <button 
-        className='block sm:hidden bg-[#f9755b] text-white px-4 py-2 rounded-md mt-4' 
+        className='block sm:hidden bg-[#f9755b] text-white px-3 py-1 sm:px-4 sm:py-2 rounded-md mt-4 text-sm font-mono' 
         onClick={() => setShowFilters(!showFilters)}
       >
         {showFilters ? 'Hide Filters' : 'Show Filters'}
@@ -48,12 +48,12 @@ const DocInfo = () => {
 
         {/* Speciality Section - Hidden in mobile unless filters are shown */}
         <div className={`flex flex-col gap-4 text-sm text-gray-600 cursor-pointer ${showFilters ? 'block' : 'hidden'} sm:block`}>
-          <h2 className='sm:text-lg text-sm font-semibold tracking-wide'>Speciality:</h2>
+          <h2 className='sm:text-lg sm:block hidden font-semibold tracking-widest mb-4'>Speciality:</h2>
           
           <Link to='/doctors'>
             <p 
               onClick={showAllDoctors} 
-              className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
+              className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border-t border-r border-l border-gray-300 transition-all cursor-pointer ${
                 location.pathname === '/doctors' ? "bg-[#f9755b] text-white" : ""
               }`}
             >
@@ -68,8 +68,8 @@ const DocInfo = () => {
                 : navigate(`/doctors/${encodeURIComponent('General Physician')}`);
               setShowFilters(false); // Hide filters after clicking
             }}
-            className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
-              speciality === 'General Physician' ? "bg-[#f9755b] text-white" : ""
+            className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border-t border-r border-l border-gray-300 transition-all cursor-pointer ${
+              speciality=== 'General Physician' ? "bg-[#f9755b] text-white" : ""
             }`}>
             General Physician
           </p>
@@ -81,7 +81,7 @@ const DocInfo = () => {
                 : navigate(`/doctors/${encodeURIComponent('Gynecologist')}`);
               setShowFilters(false); // Hide filters after clicking
             }}
-            className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
+            className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border-t border-r border-l border-gray-300 transition-all cursor-pointer ${
               speciality === 'Gynecologist' ? "bg-[#f9755b] text-white" : ""
             }`}>
             Gynecologist
@@ -94,7 +94,7 @@ const DocInfo = () => {
                 : navigate(`/doctors/${encodeURIComponent('Dermatologist')}`);
               setShowFilters(false); // Hide filters after clicking
             }}
-            className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
+            className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border-t border-r border-l border-gray-300 rounded transition-all cursor-pointer ${
               speciality === 'Dermatologist' ? "bg-[#f9755b] text-white" : ""
             }`}>
             Dermatologist
@@ -107,7 +107,7 @@ const DocInfo = () => {
                 : navigate(`/doctors/${encodeURIComponent('Pediatrician')}`);
               setShowFilters(false); // Hide filters after clicking
             }}
-            className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
+            className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border-t border-r border-l border-gray-300 transition-all cursor-pointer ${
               speciality === 'Pediatrician' ? "bg-[#f9755b] text-white" : ""
             }`}>
             Pediatrician
@@ -120,7 +120,7 @@ const DocInfo = () => {
                 : navigate(`/doctors/${encodeURIComponent('Neurologist')}`);
               setShowFilters(false); // Hide filters after clicking
             }}
-            className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
+            className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border-t border-r border-l border-gray-300 transition-all cursor-pointer ${
               speciality === 'Neurologist' ? "bg-[#f9755b] text-white" : ""
             }`}>
             Neurologist
@@ -133,7 +133,7 @@ const DocInfo = () => {
                 : navigate(`/doctors/${encodeURIComponent('Gastroenterologist')}`);
               setShowFilters(false); // Hide filters after clicking
             }}
-            className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border border-gray-300 rounded transition-all cursor-pointer ${
+            className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border-t border-r border-l border-b border-gray-300 transition-all cursor-pointer ${
               speciality === 'Gastroenterologist' ? "bg-[#f9755b] text-white" : ""
             }`}>
             Gastroenterologist
