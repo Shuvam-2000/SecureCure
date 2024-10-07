@@ -18,8 +18,6 @@ const MedContextProvider = ({ children }) => {
         setTopDoctors(doctors.slice(0,10))
     },[doctors])
 
-    // doctor appoint booking date data - Appoint Booking Page
-    
 
     const allvalues = {
         menuVisible,
