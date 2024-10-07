@@ -53,7 +53,7 @@ const DocInfo = () => {
           <Link to='/doctors'>
             <p 
               onClick={showAllDoctors} 
-              className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border-t border-r border-l border-gray-300 transition-all cursor-pointer ${
+              className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 sm:border-t sm:border-r sm:border-l border rounded sm:rounded-none border-gray-300 transition-all cursor-pointer ${
                 location.pathname === '/doctors' ? "bg-[#f9755b] text-white" : ""
               }`}
             >
@@ -68,7 +68,7 @@ const DocInfo = () => {
                 : navigate(`/doctors/${encodeURIComponent('General Physician')}`);
               setShowFilters(false); // Hide filters after clicking
             }}
-            className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border-t border-r border-l border-gray-300 transition-all cursor-pointer ${
+            className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 sm:border-t sm:border-r sm:border-l border rounded sm:rounded-none border-gray-300 transition-all cursor-pointer ${
               speciality=== 'General Physician' ? "bg-[#f9755b] text-white" : ""
             }`}>
             General Physician
@@ -81,7 +81,7 @@ const DocInfo = () => {
                 : navigate(`/doctors/${encodeURIComponent('Gynecologist')}`);
               setShowFilters(false); // Hide filters after clicking
             }}
-            className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border-t border-r border-l border-gray-300 transition-all cursor-pointer ${
+            className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 sm:border-t sm:border-r sm:border-l border rounded sm:rounded-none border-gray-300 transition-all cursor-pointer ${
               speciality === 'Gynecologist' ? "bg-[#f9755b] text-white" : ""
             }`}>
             Gynecologist
@@ -94,7 +94,7 @@ const DocInfo = () => {
                 : navigate(`/doctors/${encodeURIComponent('Dermatologist')}`);
               setShowFilters(false); // Hide filters after clicking
             }}
-            className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border-t border-r border-l border-gray-300 rounded transition-all cursor-pointer ${
+            className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 sm:border-t sm:border-r sm:border-l border sm:rounded-none border-gray-300 rounded transition-all cursor-pointer ${
               speciality === 'Dermatologist' ? "bg-[#f9755b] text-white" : ""
             }`}>
             Dermatologist
@@ -107,7 +107,7 @@ const DocInfo = () => {
                 : navigate(`/doctors/${encodeURIComponent('Pediatrician')}`);
               setShowFilters(false); // Hide filters after clicking
             }}
-            className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border-t border-r border-l border-gray-300 transition-all cursor-pointer ${
+            className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 sm:border-t sm:border-r sm:border-l border rounded sm:rounded-none border-gray-300 transition-all cursor-pointer ${
               speciality === 'Pediatrician' ? "bg-[#f9755b] text-white" : ""
             }`}>
             Pediatrician
@@ -120,7 +120,7 @@ const DocInfo = () => {
                 : navigate(`/doctors/${encodeURIComponent('Neurologist')}`);
               setShowFilters(false); // Hide filters after clicking
             }}
-            className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border-t border-r border-l border-gray-300 transition-all cursor-pointer ${
+            className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 sm:border-t sm:border-r sm:border-l border rounded sm:rounded-none border-gray-300 transition-all cursor-pointer ${
               speciality === 'Neurologist' ? "bg-[#f9755b] text-white" : ""
             }`}>
             Neurologist
@@ -133,7 +133,7 @@ const DocInfo = () => {
                 : navigate(`/doctors/${encodeURIComponent('Gastroenterologist')}`);
               setShowFilters(false); // Hide filters after clicking
             }}
-            className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 border-t border-r border-l border-b border-gray-300 transition-all cursor-pointer ${
+            className={`w-[94w] text-sm sm:w-auto pl-3 py-1.5 pr-16 sm:border-t sm:border-r sm:border-l border rounded sm:rounded-none border-gray-300 transition-all cursor-pointer ${
               speciality === 'Gastroenterologist' ? "bg-[#f9755b] text-white" : ""
             }`}>
             Gastroenterologist
