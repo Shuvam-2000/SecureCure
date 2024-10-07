@@ -14,7 +14,7 @@ const TopDoctor = () => {
       <div className="w-full grid grid-cols-auto gap-4 pt-5 gap-y-8 px-3 sm:px-0">
         {
           topDoctors.map((topDoctor) => (
-                <Link to={`/appoint/:docId${topDoctor._id}`} key={topDoctor._id}>
+                <Link to={`/appoint/${topDoctor._id}`} key={topDoctor._id}>
                     <div className="border border-gray-200 rounded-lg shadow-lg overflow-hidden cursor-pointer hover:scale-110 transition-all duration-500">
                         <img className="bg-orange-50 hover:bg-orange-100" src={topDoctor.image} alt="doctor-image" />
                         <div className="p-4">
